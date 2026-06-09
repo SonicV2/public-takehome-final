@@ -1,0 +1,23 @@
+{% extends 'layouts/main.html' %}
+
+{% block content %}
+<main>
+  <div class="mt-40 text-center text-success">
+    <h1>
+      <i class="far fa-check-circle"></i> 
+      Success!
+    </h1>
+  </div>
+  <div class="mt-40 text-center">
+    <div class="mt-20 text-center text-secondary border-placeholder">
+      <!-- Success Message Added Here -->
+      <div class="alert alert-success mt-5 w-100" role="alert">
+        {{ description }}<br>
+        Payment of total amount {{ currency }}<span class="font-weight-bold">{{ amount }}</span> was successfully processed.<br>
+        Receipt was sent to <span class="font-weight-bold">{{ email }}.</span> Email Receipt does not work with sandbox accounts!<br>
+        Payment Intent ID = <span class="font-weight-bold">{{ payment_intent_id }}</span>
+      </div>
+    </div>
+  </div>
+</main>
+{% endblock %}

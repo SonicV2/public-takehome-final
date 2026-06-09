@@ -1,0 +1,43 @@
+{% extends 'layouts/main.html' %}
+
+{% block content %}
+<!-- <script src="https://js.stripe.com/v3/"></script> -->
+<script src="https://js.stripe.com/dahlia/stripe.js"></script>
+<link rel="stylesheet" href="/css/checkout.css">
+<div class="row justify-content-md-center">
+  <div class="col-6">
+    <div class="text-center mt-40">
+      <h1>
+        Checkout — Stripe Press
+      </h1>
+      <h5 class="text-secondary">
+        {{ title }}
+      </h5>
+      <hr class="mt-40">
+      <div class="mt-20 text-info">
+        Total due: $<span class="amount" data-amount="{{ amount }}"></span>
+      </div>
+    </div>
+    <div class="card box-shadow mt-40">
+      <div class="card-body">
+        <!-- Display a payment form -->
+        <form id="payment-form" data-publishable-key="{{ publishable_key }}" data-client-secret="{{ client_secret }}">
+          <!-- Email for Receipt -->
+          <div>
+            <label for="email">Email for Receipt</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="you@email.com">
+          </div>
+          <div id="payment-element">
+            <!--Stripe.js injects the Payment Element-->
+          </div>
+          <button id="submit">
+            <div class="spinner hidden" id="spinner"></div>
+            <span id="button-text">Pay now</span>
+          </button>
+          <div id="payment-message" class="hidden"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

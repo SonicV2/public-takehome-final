@@ -1,0 +1,14 @@
+{% extends 'layouts/main.html' %}
+
+{% block content %}
+
+
+<h1>An unexpected error has occurred</h1>
+<p>Sorry for the inconvenience! We will investigate the issue and fix it as soon as possible.</p>
+<p><a href="{{ url_for('index') }}">Back</a></p>
+<br>
+{% if error %}
+<p class="text-danger">{{ error }}</p>
+{% endif %}
+
+{% endblock %}
