@@ -44,7 +44,7 @@ Note that:
 To get started, clone the repository and run pip3 to install dependencies:
 
 ```
-git clone https://github.com/SonicV2/public-takehome && cd public-takehome
+git clone https://github.com/SonicV2/public-takehome-final && cd public-takehome-final
 pip3 install -r requirements.txt
 ```
 
